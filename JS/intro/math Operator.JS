@@ -10,7 +10,7 @@ console.log('numb1 is ${numb1} its type is ${type of numb1}')
 
 numb1=40; //assignment only
 let numb2=60
-console.log('numb2 is ${numb'
+console.log('numb2 is ${numb')
 
 
 
