@@ -5,7 +5,7 @@
 
 
 
-let the firstName="samuel"
+let  firstName="samuel"
 let secondName="jane"
 let age=20
 let address="juja county"

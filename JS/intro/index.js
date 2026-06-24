@@ -35,11 +35,11 @@ console.log("strsNumb",strNumb ,"its type is",typeof strNumb)
 let myName="john"
 console.log('my nam is',myName,"its type is" ,typeof myName)
 let ismarried=true
-console.log("ismarried","ismarried,"ITs type is "typeof ismarried")
+console.log("ismarried","ismarried,","ITS type is", "typeof ismarried")
 let nullval=null//type of <null>object->
 console.log("nullval",nullval,"ITS type is",typeof nullval)
 let unValue;
-console.log(unValue",unValue,"ITs type is ",typeof unvalue")
+console.log("unValue",unValue,"ITs type is" ,"typeof unvalue")
 
 
 
