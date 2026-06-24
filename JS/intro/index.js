@@ -10,10 +10,10 @@ console.log->ensure you write your console ins= such a way that it,s help you fi
 */
 
 const sallaryGross=50000;//instruction
-//console.log("gross is ) gff
+//console.log("gross is ) 
 
 
-
+git
 
 
 
