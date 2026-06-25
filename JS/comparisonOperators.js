@@ -22,3 +22,14 @@ console.log(`mercy is age is greater than 18
     console.log(`this is not false=${!false}`)
 
     
+
+
+
+
+
+
+
+
+
+
+    
