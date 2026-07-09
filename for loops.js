@@ -1,0 +1,23 @@
+let i;
+
+for( i=1 ;i<=5 ; 1++ )
+{
+
+    console.log("*");
+}
+
+i=1
+
+while(i<=5)
+{
+    console.log("*");
+    i++
+}
+
+i=1
+do
+{
+
+    console.log("*");
+    i++
+}while(i<=5);

@@ -33,45 +33,56 @@ create a maths table for it. upto ie console Logs
 
 
 
-function promptStudent () El
+function promptStudent ()   E1
 let num1 = null;
 let num2 = null;
 while (true) {
 num1 = prompt("Enter the first number");
-if (isNaN(num1)) }
+if (isNaN(num1))}
 continue; //restart the Loop
 num2 = prompt("Enter the second number");
-if (isNaN(num2)){
+if (isNaN(num2))
 continue; //restart the Loop from begining
 num1 = parseInt(num1);
 num2 - parseInt(num2);
-if (num1 < = 0 || num2<=0) {
+if (num1 <=0 || num2<=0) {
 continue; //
 }
 break;
 console. log("Got valid number", num1, num2);
 mathTable(num1, num2);
-H
+
 function mathTable(num1, num2) 
 if (Inum1 || num1 < e || Inum2 || num2 < e) {
 console. error ("Ensure number1 or number2 are numbers greater than 0"); return;
 }
 let outerLoop = num1; 1/2
-while (outerLoop > 0) {
+while (outerLoop > 0) 
 doInnerLoop(outerLoop, num2); //
 outerLoop = outerLoop - 1;
 // while (outerLoop > 0) {
 Let innerLoop = num2; 1/3 //3
-while (innerLoop>e)(
-console. Log(outerLoop-$(outerLoop} innerLoop-$(innerLoop});
-console. Log("$(outerLoop)*${innerLoop) -S(outerLoop * innerLoop}°);
-innerLoop = innerLoop - 1;
-outerLoop = outerLoop - 1;
+while (innerLoop>e)
+console.Log(outerLoop-$({outerLoop innerLoop-$(innerLoop);
+console.Log("$(outerLoop)*${innerLoop) -S(outerLoop * innerLoop});
+innerLoop = innerLoop-1;
+outerLoop = outerLoop-1;
 //individual//test separate
-function doInnerLoop (outerLoop, num2) {
+function do InnerLoop (outerLoop, num2) 
 let innerLoop = num2;
 while (innerLoop>0) {
-console.log(" outerLoop-$(outerLoop} innerLoop-$(innerLoop} );
-console.1og("$(outerLoop) *${innerLoop)-$(outerLoop * innerLoop});
+console.log(" outerLoop-$(outerLoop} innerLoop-$(innerLoop});
+console.Log("$(outerLoop) *${innerLoop)-$(outerLoop * innerLoop});
 innerLoop = innerLoop - 1;
 }
+
+
+
+
+
+
+
+
+
+
+
