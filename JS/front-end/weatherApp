@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Alerts</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+.alert {
+    background: #ffe6e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid red;
+}
+
+
+
+
+
+    </style>
+
+
+<script src="script.js"> 
+
+
+const button = document.getElementById("searchBtn");
+const result = document.getElementById("result");
+
+button.addEventListener("click", getAlerts);
+
+async function getAlerts() {
+
+    const state = document
+        .getElementById("stateInput")
+        .value
+        .trim()
+        .toUpperCase();
+
+    result.innerHTML = "";
+
+    // Validate input
+    if (!/^[A-Z]{2}$/.test(state)) {
+        result.innerHTML = "<p>Please enter a valid two-letter U.S. state code.</p>";
+        return;
+    }
+
+    const url = `https://api.weather.gov/alerts/active?area=${state}`;
+
+    result.innerHTML = "<p>Loading alerts...</p>";
+
+    try {
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Unable to fetch weather alerts.");
+        }
+
+        const data = await response.json();
+
+        result.innerHTML = "";
+
+        if (data.features.length === 0) {
+            result.innerHTML = `<p>No active weather alerts for ${state}.</p>`;
+            return;
+        }
+
+        data.features.forEach(alert => {
+
+            const div = document.createElement("div");
+            div.className = "alert";
+
+            div.innerHTML = `
+                <h3>${alert.properties.headline}</h3>
+                <p><strong>Severity:</strong> ${alert.properties.severity}</p>
+                <p>${alert.properties.description}</p>
+            `;
+
+            result.appendChild(div);
+
+        });
+
+    } catch (error) {
+
+        result.innerHTML = `
+            <p style="color:red;">
+                Error: ${error.message}
+            </p>
+        `;
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>National Weather Alerts</h1>
+
+        <input
+            type="text"
+            id="stateInput"
+            placeholder="Enter State Code (e.g. CA)"
+            maxlength="2">
+
+        <button id="searchBtn">Get Alerts</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
